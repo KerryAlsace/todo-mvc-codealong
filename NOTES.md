@@ -46,4 +46,13 @@ Does it impact my URLS? '/lists/1' #
 3. Create NOTES.md and start planning app (above)
 4. Create file app/assets/stylesheets/todomvc-base.css
 5. Copy and paste text from https://github.com/tastejs/todomvc/blob/master/examples/vanillajs/node_modules/todomvc-app-css/index.css into that new file
-6.
+6. In config/routes.rb:
+    root 'site#index'
+7. In terminal:
+  `rails g controller site index`
+  `rails s`
+8. In browser check that template renders:
+  http://localhost:3000/
+9. In app/assets/stylesheets/application.css:
+  replace `require_tree .` with `require todomvc-base`, but keep commented out for now
+10. 

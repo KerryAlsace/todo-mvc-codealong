@@ -65,5 +65,77 @@ Does it impact my URLS? '/lists/1' #
   select "copy outerHTML" of <section class="todoapp">
 11. In app/views/site/index.html.erb:
   Replace with copied text
-12. 
-13.
+  Delete everything between "<span class="todo-count">" and "</button>" in the footer
+  Delete the input and label for "toggle-all"
+  Delete destroy button
+  Delete toggle checkbox
+  Format lines under main section class
+  Delete data-id (just id part)
+  Delete the 2 style="display: block;" texts
+  Duplicate the <li></li> with the list info and make a couple lists and make their titles clickable links
+12. In terminal:
+  `rails g resource list name:string`
+  `rake db:migrate`
+13. Test it out in terminal:
+  `rails console`
+  `List.create`
+14. In routes.rb
+  Change root to 'lists#index'
+  Delete get 'site/index'
+15. Copy the site index page's content
+16. In terminal:
+  `rails destroy controller site`
+17. Create app/views/lists/index.html.erb and paste the content from the other index page
+18. In lists_controller:
+  def index
+    @lists = List.all
+  end
+19. Change index.html.erb to render a loop of lists instead of the hardcoded lists we tested with
+20. In lists_controller, check if worked:
+  def index
+    @lists = List.all
+    raise @lists.inspect
+  end
+21. If successful, browser will show your 1 list item that you created in console as an error
+22. `rake routes` in console to check out your routes
+23. Make index.html.erb list links real with link_to:
+  link_to list.name, list_path(list)
+    * list_path = /lists/:id
+    * list_url = html://localhost:3000/lists/:id
+    All get routes have a prefix_path
+    * list_path(list) = /lists/(list.id)
+24. Create app/views/lists/show.html.erb
+25. In lists_controller:
+  def show
+    @list = List.find(params[:id])
+  end
+26. Copy code from index.html.erb to show.html.erb and take out the ruby parts and replace with:
+<label for="toggle-all">Add an item</label>
+<ul class="todo-list">
+  <li>
+    <div class="view">
+      <label>Milk</label>
+    </div>
+  </li>
+27. Replace what's in h1 with <%= @list.name %>
+28. Build form in index.html.erb:
+  a. Replace header with:
+  <h1>Your Lists</h1>
+  <%= form_for(@list) do |f| %>
+    <%= f.text_field :name, :class => "new-todo" %>
+    <%= f.submit :style => "display: none" %>
+  <% end %>
+  </form>
+29. Add to lists_controller:
+    def create
+      raise params.inspect
+    end
+30. After checking it out, replace with:
+    def create
+      @list = List.new
+      @list.name = params[:list][:name]
+      @list.save
+
+      redirect_to list_url(@list)
+    end
+31. 

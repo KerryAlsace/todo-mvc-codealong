@@ -54,5 +54,16 @@ Does it impact my URLS? '/lists/1' #
 8. In browser check that template renders:
   http://localhost:3000/
 9. In app/assets/stylesheets/application.css:
-  replace `require_tree .` with `require todomvc-base`, but keep commented out for now
-10. 
+  -remove `require_self`
+  -replace `require_tree .` with `require todomvc-base`, but keep commented out for now
+10. In browser:
+  go to: http://todomvc.com/examples/vanillajs/
+  Inspect
+  Delete the 'learn' thing
+  inspect the text bar
+  right click
+  select "copy outerHTML" of <section class="todoapp">
+11. In app/views/site/index.html.erb:
+  Replace with copied text
+12. 
+13.

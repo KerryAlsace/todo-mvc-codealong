@@ -204,4 +204,7 @@ PART 3 Mark Items complete
 4. `rake db:rollback`
 5. add `, :integer, default: 0` to migration
 6. `rake db:migrate`
-7.
+
+PART 4 Refactoring with Partials and Helpers
+
+1. 

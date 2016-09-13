@@ -78,6 +78,7 @@ Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in 
 
 # Step Whatever: Fix Down Arrow on Make a List Form
 
+PART 1 Assets and Lists
 
 1. In terminal:
   `rails new todo-mvc-codealong`
@@ -201,4 +202,4 @@ PART 3 Mark Items complete
 4. `rake db:rollback`
 5. add `, :integer, default: 0` to migration
 6. `rake db:migrate`
-7. 
+7.

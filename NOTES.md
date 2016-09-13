@@ -54,6 +54,24 @@ Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in 
 
 # Step 5: Add state to items in a list (complete, incomplete)
   -Mark items as complete/incomplete
+    -Need to get that checkbox HTML from todomvc
+    add this:
+    <input class="toggle" type="checkbox">
+
+    -Need JS function to submit the form when you click the checkbox
+
+    $(function(){
+      $("input.toggle").on("change", function(){
+        $(this).parents("form").trigger("submit")
+        })
+      });
+
+  -What URLs do I need?
+    -new forms for updating status of an item = new URL
+    -PUT/PATCH to /lists/:list_id/items/:id
+  -How might my database change?
+    -item being complete or incomplete needs to be stored
+
 
 # Step 6: Delete items from a list
 
@@ -174,3 +192,13 @@ PART 2 Lists Have items
 3. Add associations in models
 4. Adjust views to add ability to add new item to list
 5. `rails g controller items create`
+
+PART 3 Mark Items complete
+
+1. `rails g migration AddStatusToItems status:integer`
+2. `rake db:migrate`
+3. Add <input class="toggle" type="checkbox"> to lists#show page
+4. `rake db:rollback`
+5. add `, :integer, default: 0` to migration
+6. `rake db:migrate`
+7. 

@@ -37,6 +37,13 @@ Does it impact my URLS? '/lists/1' #
     -table:
       -description, list_id
 CREATE ACTION for an ITEM in a LIST
+  - The form is already on the list show page
+  - What URL does this form imply?
+
+  An item doesn't exist in our app outside of the context of the list it belongs to
+  - Nested resource - items are nested in terms of URLs under their parent list
+
+  POST /lists/:id/items
 
 Does it impact the DB? - I probably need an items table and associate items with list
 Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in a list and what is the url for that?

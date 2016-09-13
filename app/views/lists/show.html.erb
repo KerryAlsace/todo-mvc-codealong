@@ -3,10 +3,10 @@
   <header class="header">
     <h1><%= @list.name %></h1>
     <%= form_for(Item.new, url: list_items_path(@list)) do |f| %>
+    <form action="/lists" method="post">
       <%= f.text_field :description, :class => "new-todo" %>
       <%= f.submit :style => "display: none" %>
     <% end %>
-    </form>
   </header>
 
   <section class="main">

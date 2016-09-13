@@ -3,7 +3,11 @@
   <header class="header">
     <h1>Your Lists</h1>
     <%= form_for(@list) do |f| %>
-      <%= f.text_field :name, :class => "new-todo" %>
+      <% if @list.errors[:name].present? %>
+        <%= f.text_field :name, :class => "new-todo", :placeholder => "Lists must have a name" %>
+      <% else %>
+        <%= f.text_field :name, :class => "new-todo" %>
+      <% end %>
       <%= f.submit :style => "display: none" %>
     <% end %>
     </form>

@@ -48,6 +48,10 @@ CREATE ACTION for an ITEM in a LIST
 Does it impact the DB? - I probably need an items table and associate items with list
 Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in a list and what is the url for that?
 
+# Step 4: Add Validations
+  -Lists have a name
+  -Item has a description
+
 
 # Step Whatever: Fix Down Arrow on Make a List Form
 

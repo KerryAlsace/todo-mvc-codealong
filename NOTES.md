@@ -52,6 +52,11 @@ Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in 
   -Lists have a name
   -Item has a description
 
+# Step 5: Add state to items in a list (complete, incomplete)
+  -Mark items as complete/incomplete
+
+# Step 6: Delete items from a list
+
 
 # Step Whatever: Fix Down Arrow on Make a List Form
 

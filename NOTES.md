@@ -163,4 +163,5 @@ PART 2 Lists Have items
 1. `rails g model item desription:string list_id:integer`
 2. `rake db:migrate`
 3. Add associations in models
-4.
+4. Adjust views to add ability to add new item to list
+5. `rails g controller items create`

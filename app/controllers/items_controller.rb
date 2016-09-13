@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
   def create
-    # raise params.inspect
     @list = List.find(params[:list_id])
     @item = @list.items.build(item_params)
-    # raise @item.inspect
-    @item.save
-    redirect_to list_path(@list)
+    if @item.save
+      redirect_to list_path(@list)
+    else
+      render "lists/show"
+    end
   end
 
   private

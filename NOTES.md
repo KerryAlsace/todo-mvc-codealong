@@ -31,6 +31,17 @@ Does it impact my URLS? '/lists/1' #
 
 # Step 3: Add Items to a List
 
+-Make the items in a list real
+  - a list has many items
+  - item belongs to a list
+    -table:
+      -description, list_id
+CREATE ACTION for an ITEM in a LIST
+
+Does it impact the DB? - I probably need an items table and associate items with list
+Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in a list and what is the url for that?
+
+
 # Step Whatever: Fix Down Arrow on Make a List Form
 
 
@@ -138,4 +149,11 @@ Does it impact my URLS? '/lists/1' #
 
       redirect_to list_url(@list)
     end
-31. 
+
+
+PART 2 Lists Have items
+
+1. `rails g model item desription:string list_id:integer`
+2. `rake db:migrate`
+3. Add associations in models
+4.

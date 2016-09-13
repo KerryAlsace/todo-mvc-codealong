@@ -13,16 +13,15 @@
     <input class="toggle-all" type="checkbox">
     <label for="toggle-all">Add an item</label>
     <ul class="todo-list">
+
+      <% @list.items.each do |item| %>
       <li>
         <div class="view">
-          <label>Milk</label>
+          <label><%= item.description %></label>
         </div>
       </li>
-      <li>
-        <div class="view">
-          <label>Cookies</label>
-        </div>
-      </li>
+      <% end %>
+
     </ul>
   </section>
 

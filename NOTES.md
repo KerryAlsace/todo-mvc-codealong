@@ -72,6 +72,8 @@ Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in 
   -How might my database change?
     -item being complete or incomplete needs to be stored
 
+# Refactor 1. Start using partials in lists/show
+
 
 # Step 6: Delete items from a list
 

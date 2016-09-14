@@ -1,13 +1,9 @@
 class ListsController < ApplicationController
+  before_action :authentication_required
 
   def index
-    # raise session[:user_id].inspect
-    if session[:user_id].present?
-      @list = List.new
-      @lists = List.all
-    else
-      redirect_to root_path
-    end
+    @list = List.new
+    @lists = List.all
   end
 
   def show

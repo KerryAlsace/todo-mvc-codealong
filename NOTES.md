@@ -81,6 +81,10 @@ Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in 
   -I'll need a controller action
   -The delete will hit a new URL
 
+# Step 7: User Signup and Login
+
+# Step 8: Users have lists and can only see their lists
+
 
 # Step Whatever: Fix Down Arrow on Make a List Form
 

@@ -1,9 +1,13 @@
 class ListsController < ApplicationController
 
   def index
-    #if you're not logged in, redirect to login page
-    @list = List.new
-    @lists = List.all
+    # raise session[:user_id].inspect
+    if session[:user_id].present?
+      @list = List.new
+      @lists = List.all
+    else
+      redirect_to root_path
+    end
   end
 
   def show

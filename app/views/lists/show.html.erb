@@ -14,7 +14,7 @@
     <ul class="todo-list">
 
       <% @list.items.each do |item| %>
-      <%= render partial: 'items/items_li', locals: {item: item} %>
+      <%= render 'items/items_li', item: item %>
       <% end %>
 
     </ul>

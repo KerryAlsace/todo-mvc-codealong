@@ -83,6 +83,16 @@ Does it impact my URLS? '/lists/1' # - I'll need a create action for an item in 
 
 # Step 7: User Signup and Login
 
+  -How is it going to affect my db?
+  a new model: user with email
+
+  -What urls do I need?
+    get /users/new
+    post /users
+
+    get /login
+    post /sessions
+
 # Step 8: Users have lists and can only see their lists
 
 
@@ -218,3 +228,9 @@ PART 4 Refactoring with Partials and Helpers
 1. The `content_tag_for` method has been removed from Rails. To continue using it, add the `record_tag_helper` gem to your Gemfile:
   gem 'record_tag_helper', '~> 1.0'
   -error received when adding the content_tag_for
+
+PART 5 Authentication and Authorization
+
+1. `rails g model user email:string`
+2. `rake db:migrate`
+3. `rails g controller users`

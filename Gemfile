@@ -46,3 +46,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Needed in order to use content_tag_for
+gem 'record_tag_helper', '~> 1.0'

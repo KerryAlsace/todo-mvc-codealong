@@ -376,3 +376,7 @@ html .clear-completed:active {
 		bottom: 10px;
 	}
 }
+
+.field_with_errors inpute[type="text"]{
+	border: 1px solid red;
+}

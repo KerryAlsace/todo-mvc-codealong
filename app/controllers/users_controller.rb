@@ -8,9 +8,11 @@ class UsersController < ApplicationController
     # raise params.inspect -- always do first to double check that the form is correctly submitting data to the controller
     @user = User.new
     @user.email = params[:user][:email]
-    @user.save
-
-    redirect_to root_path
+    if @user.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
 end

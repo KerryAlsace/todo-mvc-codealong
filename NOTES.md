@@ -237,3 +237,8 @@ PART 5 Authentication and Authorization
 4. create users#new view and add create and validate
 5. `rails g controller sessions`
 6. add routes
+7. `rails g migration AddPasswordDigestToUsers`
+8. add `add_column :users, :password_digest, :string` to new migration
+9. `rake db:migrate`
+10. add gem 'bcrypt', '~> 3.1.7' to Gemfile
+11. `bundle`

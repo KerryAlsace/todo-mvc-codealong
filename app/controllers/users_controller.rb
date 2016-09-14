@@ -5,13 +5,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    # raise params.inspect -- always do first to double check that the form is correctly submitting data to the controller
     @user = User.new
     @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_path
     else
-      render :new
+      render 'users/new'
     end
   end
 

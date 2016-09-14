@@ -5,6 +5,8 @@
 
     <%= form_for(@user) do |f| %>
       <%= f.text_field :email, class: "new-todo", placeholder: "Sign up with your email address:" %>
+      <%= f.text_field :password, class: "new-todo", placeholder: "Choose your password" %>
+      <%= f.submit %>
     <% end %>
 
   </header>

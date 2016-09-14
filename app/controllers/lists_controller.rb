@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
 
   def index
+    #if you're not logged in, redirect to login page
     @list = List.new
     @lists = List.all
   end

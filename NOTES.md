@@ -234,3 +234,6 @@ PART 5 Authentication and Authorization
 1. `rails g model user email:string`
 2. `rake db:migrate`
 3. `rails g controller users`
+4. create users#new view and add create and validate
+5. `rails g controller sessions`
+6. add routes

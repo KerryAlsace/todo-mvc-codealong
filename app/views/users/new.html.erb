@@ -3,9 +3,9 @@
   <header class="header">
     <h1>Signup!</h1>
 
-    <form action="/users" method="post">
-      <input type="submit">
-    </form>
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :email, class: "new-todo" %>
+    <% end %>
 
   </header>
 

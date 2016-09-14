@@ -3,10 +3,9 @@
     <%= form_for_item_status(item) %>
     <label><%= item.description %></label>
 
-    <%= form_tag(list_item_path(item.list, item)) do %>
-      <input type="hidden" name="_method" value="delete">
+    <%= form_tag(list_item_path(item.list, item), method: :delete) do %>
       <button type="submit" class="destroy"></button>
-    <% end %> 
+    <% end %>
 
   </div>
 <% end %>

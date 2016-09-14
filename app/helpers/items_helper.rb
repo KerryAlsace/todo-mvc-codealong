@@ -8,4 +8,10 @@ module ItemsHelper
       yield
     end
   end
+
+  def form_for_item_status(item)
+    form_for([@list, item]) do |f|
+      f.check_box :status, class: "toggle", checked: item.complete?
+    end
+  end
 end

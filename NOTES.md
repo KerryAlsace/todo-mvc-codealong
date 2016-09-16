@@ -255,4 +255,7 @@ PART 6 Authentication
   `get '/auth/:provider/callback', to: 'sessions#create'`
 4. On github.com:
   create an app and get its key and secret
-5. 
+5. in termnal:
+  export GITHUB_KEY=<your-key>
+  export GITHUB_SECRET=<your-secret>
+6. 

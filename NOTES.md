@@ -242,3 +242,17 @@ PART 5 Authentication and Authorization
 9. `rake db:migrate`
 10. add gem 'bcrypt', '~> 3.1.7' to Gemfile
 11. `bundle`
+
+PART 6 Authentication
+1. Add to gemfile:
+  `gem 'omniauth'`
+  `gem 'omniauth-github'`
+2. Create file config/initializers/omniauth.rb and add:
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+    end
+3. In routes.rb:
+  `get '/auth/:provider/callback', to: 'sessions#create'`
+4. On github.com:
+  create an app and get its key and secret
+5. 

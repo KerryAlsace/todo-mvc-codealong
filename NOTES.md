@@ -265,3 +265,8 @@ PART 6 Authentication
   `ENV["GITHUB_SECRET"]` (should return your secret)
 7. `rails s`
   http://localhost:3000/auth/github (should redirect to authenticate)
+8. add `raise "stop".inspect` to sessions#create
+9. In the browser console you can do:
+  request.class
+  request.env["omniauth.auth"]
+10. 

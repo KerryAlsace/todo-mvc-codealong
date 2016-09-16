@@ -247,6 +247,7 @@ PART 6 Authentication
 1. Add to gemfile:
   `gem 'omniauth'`
   `gem 'omniauth-github'`
+  `bundle`
 2. Create file config/initializers/omniauth.rb and add:
     Rails.application.config.middleware.use OmniAuth::Builder do
       provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
@@ -256,6 +257,11 @@ PART 6 Authentication
 4. On github.com:
   create an app and get its key and secret
 5. in termnal:
-  export GITHUB_KEY=<your-key>
-  export GITHUB_SECRET=<your-secret>
-6. 
+  `export GITHUB_KEY=<your-key>`
+  `export GITHUB_SECRET=<your-secret>`
+6. test that it worked => in terminal
+  `rails c`
+  `ENV["GITHUB_KEY"]` (should return your key)
+  `ENV["GITHUB_SECRET"]` (should return your secret)
+7. `rails s`
+  http://localhost:3000/auth/github (should redirect to authenticate)

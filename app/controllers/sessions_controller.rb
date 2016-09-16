@@ -4,12 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
+    raise "stop".inspect
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to root_path
     else
-      render 'sessions#new'
+      render 'sessions/new'
     end
   end
 

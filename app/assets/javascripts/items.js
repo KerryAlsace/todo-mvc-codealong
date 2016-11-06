@@ -1,6 +1,17 @@
 function Item(attributes) {
-	this.description = attributes.name;
+	this.description = attributes.description;
 	this.id = attributes.id;
+};
+
+Item.success = function(json) {
+	var item = new Item(json);
+	var itemLi = item.renderLI();
+
+	$("ul.todo-list").append(itemLi);
+};
+
+Item.error = function(response) {
+	console.log("Broke", response);
 };
 
 $(function() {
@@ -26,14 +37,7 @@ $(function() {
 			dataType: "json",
 			method: "POST"
 		})
-		.success(function(json) {
-			var item = new Item(json);
-			var itemLi = item.renderLI();
-
-			$("ul.todo-list").append(itemLi);
-		})
-		.error(function(response) {
-			console.log("Broke", response);
-		});
+		.success(Item.success)
+		.error(Item.error)
 	});
 });

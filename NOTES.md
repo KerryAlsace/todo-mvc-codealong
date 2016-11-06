@@ -218,3 +218,7 @@ PART 4 Refactoring with Partials and Helpers
 1. The `content_tag_for` method has been removed from Rails. To continue using it, add the `record_tag_helper` gem to your Gemfile:
   gem 'record_tag_helper', '~> 1.0'
   -error received when adding the content_tag_for
+
+PART 5 Revert and Add AJAX
+
+1.

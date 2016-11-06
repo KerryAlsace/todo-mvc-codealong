@@ -222,3 +222,5 @@ PART 4 Refactoring with Partials and Helpers
 PART 5 Revert and Add AJAX
 
 1. Highjack click event for the form
+2. Add ajax
+3. Add handlebars

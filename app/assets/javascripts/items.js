@@ -5,6 +5,6 @@ $(function() {
 		var action = $form.attr("action");
 		var params = $form.serialize();
 
-		$.post(action, params);
+		$.post(action, params); // what do we want to do when the server responds to this ajax request?
 	});
 });

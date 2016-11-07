@@ -35,8 +35,12 @@ Item.destroy = function(json) {
 	item.destroy();
 };
 
+Item.prototype.$li = function() {
+	return $("li#item_" + this.id);
+};
+
 Item.prototype.destroy = function() {
-	$("li#item_" + this.id).remove();
+	this.$li().remove();
 };
 
 Item.destroyListener = function() {

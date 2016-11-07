@@ -44,7 +44,7 @@ Item.prototype.destroy = function() {
 };
 
 Item.destroyListener = function() {
-	$("input.destroy").on("click", function(e) {
+	$("ul.todo-list").on("click", "input.destroy", function(e) {
 		e.preventDefault();
 		var $form = $(this).parent("form");
 		var action = $form.attr("action");
@@ -62,7 +62,7 @@ Item.destroyListener = function() {
 };
 
 Item.formSubmitListener = function() {
-	$("form#new_item").on("submit", Item.formSubmit);
+	$("body").on("submit", "form#new_item", Item.formSubmit);
 };
 
 Item.ready = function() {

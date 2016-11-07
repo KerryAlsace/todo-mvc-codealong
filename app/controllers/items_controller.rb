@@ -23,7 +23,10 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to list_path(@item.list)
+    respond_to do |f|
+      f.json { render :json => @item}
+      f.html {redirect_to list_path(@item.list)}
+    end
   end
 
   private

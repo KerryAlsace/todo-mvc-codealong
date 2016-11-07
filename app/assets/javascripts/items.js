@@ -30,10 +30,30 @@ Item.formSubmit = function(e) {
 	.error(Item.error)
 };
 
+Item.destroy = function(json) {
+	var item = new Item(json);
+	item.destroy();
+};
+
+Item.prototype.destroy = function() {
+	$("li#item_" + this.id).remove();
+};
+
 Item.destroyListener = function() {
 	$("input.destroy").on("click", function(e) {
 		e.preventDefault();
-		console.log("Hijacked the click");
+		var $form = $(this).parent("form");
+		var action = $form.attr("action");
+		var params = $form.serialize();
+
+		$.ajax({
+			url: action,
+			data: params,
+			dataType: "json",
+			method: "DELETE"
+		})
+		.success(Item.destroy)
+		.error(Item.error)
 	});
 };
 
